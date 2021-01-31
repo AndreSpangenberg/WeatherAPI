@@ -1,6 +1,7 @@
 import React from "react";
 import apiKeys from "../api/apiKeys";
 import loader from "../image/WeatherIcons.gif";
+import ReactAnimatedWeather from "react-animated-weather";
 
 class Weather extends React.Component {
   state = {
@@ -114,7 +115,7 @@ class Weather extends React.Component {
         this.setState({ icon: "CLEAR_DAY" });
     }
   };
-
+  
   render() {
     if (this.state.temperatureC) {
       return (
@@ -125,12 +126,18 @@ class Weather extends React.Component {
                         <span>{this.state.city}</span>
                         <sup>{this.state.country}</sup>
                     </h2>
-                    <div className="city-temp">
-                        Temperature: {this.state.temperatureC}
-                        <sup>&deg;C</sup>
+                    <div className="forecast-icon">
+                      <ReactAnimatedWeather
+                        icon={this.state.icon} 
+                        weather={this.state.main}
+                      />
                     </div>
                     <div className="city-description">
                         Description: {this.state.description}
+                    </div>
+                    <div className="city-temp">
+                        Temperature: {this.state.temperatureC}
+                        <sup>&deg;C</sup>
                     </div>
                     <div className="city-humidity">
                         Humidity: {this.state.humidity}%
