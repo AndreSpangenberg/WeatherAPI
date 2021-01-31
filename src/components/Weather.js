@@ -19,7 +19,7 @@ class Weather extends React.Component {
     sunset: undefined,
     errorMsg: undefined,
   };
-
+  
   componentDidMount() {
     if (navigator.geolocation) {
       this.getPosition()
@@ -29,7 +29,7 @@ class Weather extends React.Component {
         })
         .catch((err) => {
           //If user denied location service then standard location weather will le shown on basis of latitude & latitude.
-          this.getWeather(-26.03333,27.83333);
+          this.getWeather(28.67, 77.22);
           alert(
             "You have disabled location service. Allow 'This APP' to access your location. Your current location will be used for calculating Real time weather."
           );
@@ -44,19 +44,10 @@ class Weather extends React.Component {
     );
   }
 
+
   componentWillUnmount() {
     clearInterval(this.timerID);
   }
-
-  // tick = () => {
-  //   this.getPosition()
-  //   .then((position) => {
-  //     this.getWeather(position.coords.latitude, position.coords.longitude)
-  //   })
-  //   .catch((err) => {
-  //     this.setState({ errorMessage: err.message });
-  //   });
-  // }
 
   getPosition = (options) => {
     return new Promise(function (resolve, reject) {
