@@ -20,56 +20,27 @@ class Weather extends React.Component {
     errorMsg: undefined,
   };
 
-  componentDidMount() {
-    if (navigator.geolocation) {
-      this.getPosition()
-        //If user allow location service then will fetch data & send it to get-weather function.
-        .then((position) => {
-          this.getWeather(position.coords.latitude, position.coords.longitude);
-        })
-        .catch((err) => {
-          //If user denied location service then standard location weather will le shown on basis of latitude & latitude.
-          this.getWeather(-26.03333,27.83333);
-          alert(
-            "You have disabled location service. Allow 'This APP' to access your location. Your current location will be used for calculating Real time weather."
-          );
-        });
-    } else {
-      alert("Geolocation not available");
-    }
-
-    this.timerID = setInterval(
-      () => this.getWeather(this.state.lat, this.state.lon),
-      600000
-    );
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
-
-  getPosition = (options) => {
+  getPosition = () => {
     return new Promise(function (resolve, reject) {
-      navigator.geolocation.getCurrentPosition(resolve, reject, options);
+      navigator.geolocation.getCurrentPosition(resolve, reject);
     });
   };
-  getWeather = async (lat, lon) => {
+  getWeather = async (latitude, longitude) => {
     const api_call = await fetch(
-      `${apiKeys.base}weather?lat=${lat}&lon=${lon}&units=metric&APPID=${apiKeys.key}`
-    );
-    const data = await api_call.json();
-    this.setState({
-      lat: lat,
-      lon: lon,
-      city: data.name,
-      temperatureC: Math.round(data.main.temp),
-      temperatureF: Math.round(data.main.temp * 1.8 + 32),
-      description: data.weather[0].description,
-      humidity: data.main.humidity,
-      main: data.weather[0].main,
-      country: data.sys.country,
+      `${apiKeys.base}weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${apiKeys.key}`);
+      const data = await api_call.json();
+      this.setState({
+        lat: latitude,
+        lon: longitude,
+        city: data.name,
+        temperatureC: Math.round(data.main.temp),
+        temperatureF: Math.round(data.main.temp * 1.8 + 32),
+        description: data.weather[0].description,
+        humidity: data.main.humidity,
+        main: data.weather[0].main,
+        country: data.sys.country,
+      });
 
-    });
     switch (this.state.main) {
       case "Haze":
         this.setState({ icon: "CLEAR_DAY" });
@@ -102,6 +73,25 @@ class Weather extends React.Component {
         this.setState({ icon: "CLEAR_DAY" });
     }
   };
+  componentDidMount() {
+    this.getPosition()
+    .then((position) => {
+       this.getWeather(position.coords.latitude,     
+       position.coords.longitude)
+     })
+     .catch((err) => {
+       this.setState({errorMessage: err.message});
+     });
+
+     this.timerID = setInterval(
+      () => this.getWeather(this.state.lat, this.state.lon),
+      600000
+    );
+ }
+
+ componentWillUnmount(){
+   clearInterval(this.timerID);
+ }
   
   render() {
     if (this.state.temperatureC) {
