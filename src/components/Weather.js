@@ -94,7 +94,8 @@ class Weather extends React.Component {
  }
   
   render() {
-    if (this.state.temperatureC) {
+    const{ city, temperatureC, temperatureF,sunrise,sunset} = this.state;
+    if (city) {
       return (
         <React.Fragment>
               <div className="main-container">
