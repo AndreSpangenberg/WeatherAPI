@@ -106,8 +106,33 @@ html, body, #root {
   align-items: center;
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
+  .city-name span{
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  .city-name sup {
+    text-align: left;
+  }
+  .city-description {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .city-temp {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-left: -19px;
+  }
+  .city-humidity {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-left: -30px;
+  }
+
+}
+
+@media screen and (max-width: 768px){
   .city-name span{
     text-align: left;
     font-size: 1.2rem;
