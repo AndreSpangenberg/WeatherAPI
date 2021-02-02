@@ -113,8 +113,7 @@ class Weather extends Component {
                         Description: {this.state.description}
                     </div>
                     <div className="city-temp">
-                        Temperature: {this.state.temperatureC}
-                        <sup>&deg;C</sup>
+                        Temperature: {this.state.temperatureC}&deg;C
                     </div>
                     <div className="city-humidity">
                         Humidity: {this.state.humidity}%

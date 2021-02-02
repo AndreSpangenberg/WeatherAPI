@@ -40,6 +40,7 @@ html, body, #root {
   border-radius: 20px;
   background: rgba(250, 250, 250, 0.85);
   box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
+  justify-content: center;
 }
 
 .forecast-icon {
@@ -53,7 +54,9 @@ html, body, #root {
   margin-top: 10px;
   color: #1e2432;
   text-align: left;
+  margin-left: -52px;
 }
+
 .city-description {
   font-size: 1rem;
   font-weight: bold;
@@ -68,6 +71,7 @@ html, body, #root {
   margin-top: 10px;
   color: #1e2432;
   text-align: left;
+  margin-left: -69px;
 }
 
 .city sup {
@@ -86,6 +90,10 @@ html, body, #root {
   background: #0077ff;
 }
 
+.city-name span {
+  text-align: center;
+}
+
 .city-icon {
   margin-top: 10px;
   width: 100px;
@@ -100,9 +108,26 @@ html, body, #root {
 
 @media only screen and (max-width: 600px) {
 
-  .city {
-      padding: 40px 20%;
-      text-align: center;
+  .city-name span{
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  .city-name sup {
+    text-align: left;
+  }
+  .city-description {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .city-temp {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-left: -19px;
+  }
+  .city-humidity {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-left: -30px;
   }
 
 }
