@@ -53,8 +53,7 @@ html, body, #root {
   font-weight: bold;
   margin-top: 10px;
   color: #1e2432;
-  text-align: left;
-  margin-left: -52px;
+  text-align: center;
 }
 
 .city-description {
@@ -62,7 +61,7 @@ html, body, #root {
   font-weight: bold;
   margin-top: 10px;
   color: #1e2432;
-  text-align: left;
+  text-align: center;
 }
 
 .city-humidity {
@@ -70,8 +69,7 @@ html, body, #root {
   font-weight: bold;
   margin-top: 10px;
   color: #1e2432;
-  text-align: left;
-  margin-left: -69px;
+  text-align: center;
 }
 
 .city sup {
@@ -106,51 +104,51 @@ html, body, #root {
   align-items: center;
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
 
   .city-name span{
-    text-align: left;
+    text-align: center;
     font-size: 1.2rem;
   }
   .city-name sup {
-    text-align: left;
+    text-align: center;
   }
   .city-description {
     text-align: center;
     font-size: 0.8rem;
   }
   .city-temp {
-    text-align: left;
+    text-align: center;
     font-size: 0.8rem;
     margin-left: -19px;
   }
   .city-humidity {
-    text-align: left;
+    text-align: center;
     font-size: 0.8rem;
     margin-left: -30px;
   }
 
 }
 
-@media screen and (max-width: 768px){
+@media only screen and (max-width: 768px){
   .city-name span{
-    text-align: left;
+    text-align: center;
     font-size: 1.2rem;
   }
   .city-name sup {
-    text-align: left;
+    text-align: center;
   }
   .city-description {
     text-align: center;
     font-size: 0.8rem;
   }
   .city-temp {
-    text-align: left;
+    text-align: center;
     font-size: 0.8rem;
     margin-left: -19px;
   }
   .city-humidity {
-    text-align: left;
+    text-align: center;
     font-size: 0.8rem;
     margin-left: -30px;
   }
