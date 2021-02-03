@@ -20,6 +20,9 @@ html, body, #root {
   background-size: cover;
   background-position: center;
   border-bottom: 10%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .main-container {
