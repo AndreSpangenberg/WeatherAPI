@@ -165,14 +165,14 @@ html, body, #root {
   }
   div.city-description {
     font-size: 0.9rem;
-    margin-left: -35px;
+    margin-left: -44px;
   }
   div.city-temp {
     font-size: 0.9rem;
-    margin-left: -89px;
+    margin-left: -98px;
   }
   div.city-humidity {
     font-size: 0.9rem;
-    margin-left: -111px;
+    margin-left: -120px;
   }
 }
