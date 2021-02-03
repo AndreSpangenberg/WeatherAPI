@@ -52,7 +52,6 @@ html, body, #root {
 .forecast-icon {
   padding: 25px 0;
 }
-
 .city-temp {
   font-size: 1rem;
   font-weight: bold;
@@ -67,8 +66,6 @@ html, body, #root {
   font-weight: bold;
   margin-top: 10px;
   color: #1e2432;
-  text-align: center;
-
 }
 
 .city-humidity {
@@ -113,7 +110,7 @@ html, body, #root {
 }
 
 @media only screen and (max-width: 576px) {
-  .city-name span{
+  h2.city-name span{
     text-align: center;
     font-size: 1.2rem;
   }
@@ -122,7 +119,7 @@ html, body, #root {
   }
   div.city-description {
     font-size: 0.8rem;
-    margin-left: -15px;
+    margin-left: -12px;
   }
   div.city-temp {
     font-size: 0.8rem;
@@ -135,7 +132,7 @@ html, body, #root {
 
 }
 
-@media only screen and (max-width: 768px){
+@media screen and (max-width: 768px){
   .city-name span{
     text-align: center;
     font-size: 1.2rem;
@@ -143,17 +140,39 @@ html, body, #root {
   .city-name sup {
     text-align: center;
   }
-  .city-description {
+  div.city-description {
     font-size: 0.8rem;
     margin-left: -12px;
   }
-  .city-temp {
+  div.city-temp {
     font-size: 0.8rem;
     margin-left: -61px;
   }
-  .city-humidity {
+  div.city-humidity {
     font-size: 0.8rem;
     margin-left: -82px;
   }
 
+}
+
+@media only screen and (max-width: 992px){
+  .city-name span{
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .city-name sup {
+    text-align: center;
+  }
+  div.city-description {
+    font-size: 1rem;
+    margin-left: -24px;
+  }
+  div.city-temp {
+    font-size: 1rem;
+    margin-left: -75px;
+  }
+  div.city-humidity {
+    font-size: 1rem;
+    margin-left: -99px;
+  }
 }
