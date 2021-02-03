@@ -59,6 +59,7 @@ html, body, #root {
   margin-top: 10px;
   color: #1e2432;
   text-align: center;
+  margin-left: -18px;
 }
 
 .city-description {
@@ -67,6 +68,7 @@ html, body, #root {
   margin-top: 10px;
   color: #1e2432;
   text-align: center;
+
 }
 
 .city-humidity {
@@ -75,6 +77,7 @@ html, body, #root {
   margin-top: 10px;
   color: #1e2432;
   text-align: center;
+  margin-left: -43px;
 }
 
 .city sup {
@@ -121,16 +124,15 @@ html, body, #root {
   .city-description {
     text-align: center;
     font-size: 0.8rem;
+
   }
   .city-temp {
     text-align: center;
     font-size: 0.8rem;
-    margin-left: -19px;
   }
   .city-humidity {
     text-align: center;
     font-size: 0.8rem;
-    margin-left: -30px;
   }
 
 }
